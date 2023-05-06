@@ -1,0 +1,25 @@
+<div class="flex" data-controller="gallery">
+  <div class="flex flex-col w-full sm:w-[90vw] ml-2">
+    <div class="h-[2vh] sm:h-[5vh] bg-black"></div>
+    <div class="artbox" data-gallery-target="pictureframe">
+      <% @artist.artpieces.each_with_index do |piece, i| %>
+        <% if i == 0 %>
+          <%= image_tag piece.asset, class:"h-full transition-all" %>
+        <% else %>
+          <%= image_tag piece.asset, class:"h-full hidden transition-all" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="flex justify-end gap-4 items-center px-5 h-[10vh] bg-black items-center">
+      <div data-gallery-target="titles" class="hidden">
+        <!--I'm Your Venus,Resurrection,Lucky Man,Set Fire To The Rain-->
+        <%= @titles %>
+      </div>
+      <p class="font-inter font-extrabold text-3xl text-white text-end mt-12" data-gallery-target="titleplate"></p>
+      <button class="btn bg-black text-white mt-12" data-action="gallery#next">Next</button>
+    </div>
+  </div>
+  <div class="flex justify-center w-2 sm:w-[100px] h-auto bg-black invisible sm:visible transition-all">
+    <%= image_tag @artist.nameplate, class:"h-[1000px] w-[100vpx]" %>
+  </div>
+</div>

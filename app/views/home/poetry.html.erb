@@ -1,0 +1,17 @@
+<div class="flex">
+	<div class="w-[100px]">
+		<%= image_tag 'util/poetryplate.png'%>
+	</div>
+	<div class="w-full flex flex-col font-inter text-white gap-8 py-4 pl-4 md:py-20 md:pl-20">
+		<div class="bg-gradient-to-r from-slate-400 to-gray-100 h-1 w-full self-center"></div>
+		<% @poets.each do |poet| %>
+			<%= link_to poet do %>
+				<div class="flex gap-2">
+					<p class="flex items-center justify-end text-end w-20 md:w-40 text-slate-300"><%= poet.first %></p>
+					<div class="bg-gradient-to-b from-slate-400 to-gray-50 w-1 h-12"></div>
+					<p class="flex items-center font-black"><%= poet.last.upcase %></p>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

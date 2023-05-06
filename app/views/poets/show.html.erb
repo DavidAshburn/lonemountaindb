@@ -1,0 +1,17 @@
+<div class="flex">
+  <div class="flex flex-col w-[90vw]">
+    <% @poet.poems.each do |poem| %>
+      <div class="poembox">
+        <h1 class="poemtitle"><%= poem.title.upcase %></h1>
+        <div class="poembody">
+          <%=raw poem.body %>
+        </div>
+      </div>
+      <div class="flex justify-end gap-4 items-center px-5 h-[10vh] bg-black">
+      </div>
+    <% end %>
+  </div>
+  <div class="poetname">
+    <%= image_tag @poet.nameplate %>
+  </div>
+</div>

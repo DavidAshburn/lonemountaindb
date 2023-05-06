@@ -1,0 +1,27 @@
+<div id="<%= dom_id poet %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">First:</strong>
+    <%= poet.first %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Last:</strong>
+    <%= poet.last %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bio:</strong>
+    <%= poet.bio %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nameplate:</strong>
+    <%= poet.nameplate %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this poet", poet, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this poet', edit_poet_path(poet), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
